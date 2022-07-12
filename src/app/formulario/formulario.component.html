@@ -1,0 +1,36 @@
+<form (ngSubmit)="agregarBtn()" #testForm="ngForm" ngNativeValidate>
+  <div class="agregar">
+    <div class="agregar_contenedor">
+      <select
+        [(ngModel)]="selectedOption"
+        [ngClass]="{ redfocus: selectedOption == 'egr' }"
+        class="agregar_tipo"
+      >
+        <option value="ing" selected>+</option>
+        <option value="egr">-</option>
+      </select>
+      <input
+        [ngClass]="{ redfocus: selectedOption == 'egr' }"
+        type="text"
+        class="agregar_descripcion"
+        placeholder="Agregar Descripción"
+        [(ngModel)]="desInput"
+        required
+      />
+      <input
+        [ngClass]="{ redfocus: selectedOption == 'egr' }"
+        type="number"
+        class="agregar_valor"
+        placeholder="Valor"
+        [(ngModel)]="valInput"
+        required
+      />
+      <button type="submit" class="agregar_btn">
+        <i
+          [ngClass]="{ red: selectedOption == 'egr' }"
+          class="ion-ios-checkmark-outline"
+        ></i>
+      </button>
+    </div>
+  </div>
+</form>
